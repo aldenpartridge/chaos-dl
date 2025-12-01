@@ -10,7 +10,7 @@ go install github.com/aldenpartridge/chaos-dl/cmd/chaos-dl@latest
 ## Usage
 
 ```
-chaos-dl -r              # fetch/update index.json
+chaos-dl -u              # fetch/update index.json
 chaos-dl -l              # list available programs
 chaos-dl -d <name|all>   # download program(s)
 chaos-dl -q <domain>     # query for a domain
@@ -26,7 +26,7 @@ chaos-dl -q <domain>     # query for a domain
 
 ```bash
 # Download all programs
-chaos-dl -r
+chaos-dl -u
 chaos-dl -d all -w 32
 
 # Download single program
