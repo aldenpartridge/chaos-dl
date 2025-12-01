@@ -16,10 +16,24 @@ import (
 )
 
 const (
-	indexURL  = "https://chaos-data.projectdiscovery.io/index.json"
-	cacheFile = "index.json"
-	chaosDir  = "chaos"
+	indexURL = "https://chaos-data.projectdiscovery.io/index.json"
 )
+
+var (
+	cacheFile string
+	chaosDir  string
+)
+
+func init() {
+	home, err := os.UserHomeDir()
+	if err != nil {
+		home = "."
+	}
+	baseDir := filepath.Join(home, ".chaos-dl")
+	os.MkdirAll(baseDir, 0755)
+	cacheFile = filepath.Join(baseDir, "index.json")
+	chaosDir = filepath.Join(baseDir, "chaos")
+}
 
 type Program struct {
 	Name  string `json:"name"`
@@ -44,10 +58,10 @@ type queryResult struct {
 }
 
 func main() {
-	refresh := flag.Bool("refresh", false, "Refresh the index.json cache")
-	download := flag.String("dl", "", "Download subdomains for a specific program (or 'all')")
+	refresh := flag.Bool("r", false, "Refresh the index.json cache")
+	download := flag.String("d", "", "Download subdomains for a specific program (or 'all')")
 	query := flag.String("q", "", "Query for a domain across all downloaded data")
-	list := flag.Bool("list", false, "List all available programs")
+	list := flag.Bool("l", false, "List all available programs")
 	workers := flag.Int("w", runtime.NumCPU()*2, "Number of concurrent workers")
 	flag.Parse()
 
