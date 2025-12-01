@@ -2,12 +2,17 @@
 
 Download and query ProjectDiscovery's Chaos subdomain dataset.
 
+## Installation
+```console
+go install github.com/aldenpartridge/chaos-dl/cmd/chaos-dl@latest
+```
+
 ## Usage
 
 ```
-chaos-dl -refresh              # fetch/update index.json
+chaos-dl -r              # fetch/update index.json
 chaos-dl -list                 # list available programs
-chaos-dl -dl <name|all>  # download program(s)
+chaos-dl -d <name|all>  # download program(s)
 chaos-dl -q <domain>       # query for a domain
 ```
 
@@ -21,11 +26,11 @@ chaos-dl -q <domain>       # query for a domain
 
 ```bash
 # Download all programs
-chaos-dl -refresh
-chaos-dl -dl all -w 32
+chaos-dl -r
+chaos-dl -d all -w 32
 
 # Download single program
-chaos-dl -dl uber
+chaos-dl -d uber
 
 # Query and pipe to other tools
 chaos-dl -q uber.com
