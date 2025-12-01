@@ -58,7 +58,7 @@ type queryResult struct {
 }
 
 func main() {
-	refresh := flag.Bool("r", false, "Refresh the index.json cache")
+	refresh := flag.Bool("u", false, "Update the index.json cache")
 	download := flag.String("d", "", "Download subdomains for a specific program (or 'all')")
 	query := flag.String("q", "", "Query for a domain across all downloaded data")
 	list := flag.Bool("l", false, "List all available programs")
