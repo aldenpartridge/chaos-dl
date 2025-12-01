@@ -11,9 +11,9 @@ go install github.com/aldenpartridge/chaos-dl/cmd/chaos-dl@latest
 
 ```
 chaos-dl -r              # fetch/update index.json
-chaos-dl -list                 # list available programs
-chaos-dl -d <name|all>  # download program(s)
-chaos-dl -q <domain>       # query for a domain
+chaos-dl -l              # list available programs
+chaos-dl -d <name|all>   # download program(s)
+chaos-dl -q <domain>     # query for a domain
 ```
 
 ## Options
