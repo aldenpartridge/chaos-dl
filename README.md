@@ -37,8 +37,3 @@ subdomain3.uber.com
 
 chaos-dl -q shopify.com | httpx
 ```
-## Build
-
-```bash
-go build -ldflags="-s -w" -o chaos-dl .
-```
