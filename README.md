@@ -4,7 +4,7 @@ Download and query ProjectDiscovery's Chaos subdomain dataset.
 
 ## Installation
 ```console
-go install github.com/aldenpartridge/chaos-dl/cmd/chaos-dl@latest
+go install github.com/aldenpartridge/chaos-dl/cmd/chaos-dl@v1.0.1
 ```
 
 ## Usage
